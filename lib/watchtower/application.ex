@@ -20,6 +20,7 @@ defmodule Watchtower.Application do
           Please run `mix compile.watchtower` or add :watchtower to the end of the list
           of compliers in mix.exs
         """)
+
         []
       end
 

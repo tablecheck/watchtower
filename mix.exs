@@ -1,17 +1,35 @@
 defmodule Watchtower.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+  @url "https://github.com/tablecheck/watchtower"
+  @maintainers [
+    "Matthew Pinkston"
+  ]
+
   def project do
     [
       app: :watchtower,
-      version: "0.1.0",
+      description: "Polling made easy.",
+      package: package(),
+      version: @version,
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      source_url: @url,
+      homepage_url: @url
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
+  def package do
+    [
+      name: "Watchtower",
+      maintainers: @maintainers,
+      licenses: ["MIT"],
+      links: %{Github: @url}
+    ]
+  end
+
   def application do
     [
       extra_applications: [:logger],
@@ -19,11 +37,7 @@ defmodule Watchtower.MixProject do
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-    ]
+    []
   end
 end

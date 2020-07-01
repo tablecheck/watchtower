@@ -6,9 +6,11 @@ defmodule Mix.Tasks.Compile.Watchtower do
     # config = Mix.Project.config
     # Mix.Task.run "compile", args
     {opts, _, _} =
-      OptionParser.parse(args, switches: [
-        verbose: :boolean
-      ])
+      OptionParser.parse(args,
+        switches: [
+          verbose: :boolean
+        ]
+      )
 
     verbose = opts[:verbose]
 
