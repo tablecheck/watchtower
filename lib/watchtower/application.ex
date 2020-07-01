@@ -13,7 +13,7 @@ defmodule Watchtower.Application do
         # This will only be available after the library is compiled
         beacons = apply(Watchtower.BeaconRegistry, :beacons, [])
         # List all child processes to be supervised
-        children = [Watchtower.Watchman] ++ Enum.map(beacons, &Watchtower.Beacon.child_spec/1)
+        [Watchtower.Watchman] ++ Enum.map(beacons, &Watchtower.Beacon.child_spec/1)
       else
         Logger.warn("""
           Could not find Beacon Registry!

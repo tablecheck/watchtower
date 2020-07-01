@@ -31,7 +31,6 @@ defmodule Watchtower.Beacon do
     it was called, the previous return state, and number of consecutive
     returns with that state.
     """
-    @derive Jason.Encoder
     defstruct module: nil,
               status: :init,
               severity: :none,

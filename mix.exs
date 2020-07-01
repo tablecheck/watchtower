@@ -23,7 +23,6 @@ defmodule Watchtower.MixProject do
 
   def package do
     [
-      name: "Watchtower",
       maintainers: @maintainers,
       licenses: ["MIT"],
       links: %{Github: @url}
@@ -38,6 +37,8 @@ defmodule Watchtower.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
   end
 end
